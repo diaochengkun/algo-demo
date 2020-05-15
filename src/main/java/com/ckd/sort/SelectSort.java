@@ -26,11 +26,4 @@ public class SelectSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = ArrayUtils.toArrays(20);
-        System.out.println(Arrays.toString(nums));
-        SelectSort sort = new SelectSort();
-        sort.sort(nums);
-        System.out.println(Arrays.toString(nums));
-    }
 }

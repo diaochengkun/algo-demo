@@ -24,12 +24,4 @@ public class InsertSort {
             nums[j+1] = ele;
         }
     }
-
-    public static void main(String[] args) {
-        int[] nums = ArrayUtils.toArrays(20);
-        System.out.println(Arrays.toString(nums));
-        InsertSort sort = new InsertSort();
-        sort.sort(nums);
-        System.out.println(Arrays.toString(nums));
-    }
 }

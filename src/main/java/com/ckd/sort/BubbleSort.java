@@ -1,43 +1,34 @@
 package com.ckd.sort;
 
-import java.util.Arrays;
-
 /**
- * @auther: dck
- * @Date: 2020/3/3
- * @Description:
  * 冒泡排序
+ * 最好时间复杂：O(1)
+ * 最坏时间复杂度：O(n^2)
+ * 平均时间复杂度：O(n^2)
  */
-public class BubbleSort {
+public class BubbleSort implements Sort{
 
-    public void sort(int[] nums){
-        if (nums == null || nums.length ==0){
+    @Override
+    public void sort(int[] nums) {
+        if (nums == null || nums.length <= 1){
             return;
         }
-        //外层控制冒泡次数
-        for(int i=0;i<nums.length;i++){
-            //是否排好序标志
-            boolean flag = false;
-            //内层控制每次冒泡从头开始比较
+        //第一层控制排序次数
+        for (int i=0;i<nums.length;i++){
+            //提前退出冒泡排序标志位
+            boolean swapSingleSort = false;
+            //第二轮控制每轮比较次数
             for (int j=0;j<nums.length-i-1;j++){
                 if (nums[j] > nums[j+1]){
-                    int tmp = nums[j+1];
-                    nums[j+1] = nums[j];
-                    nums[j] = tmp;
-                    flag = true;
+                    swapSingleSort = true;
+                    int tmp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = tmp;
                 }
             }
-            if (!flag){
+            if (!swapSingleSort){
                 break;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = ArrayUtils.toArrays(20);
-        System.out.println(Arrays.toString(nums));
-        BubbleSort sort = new BubbleSort();
-        sort.sort(nums);
-        System.out.println(Arrays.toString(nums));
     }
 }

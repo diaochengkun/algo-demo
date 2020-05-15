@@ -48,12 +48,4 @@ public class MergeSort {
             nums[s1+l] = tmp[l];
         }
     }
-
-    public static void main(String[] args) {
-        int[] nums = ArrayUtils.toArrays(20);
-        System.out.println(Arrays.toString(nums));
-        MergeSort sort = new MergeSort();
-        sort.sort(nums);
-        System.out.println(Arrays.toString(nums));
-    }
 }
